@@ -25,6 +25,14 @@
     --box-shadow:0 2rem 3rem var(--color-light);
     
 }
+/* ==============dark theme variables ==========*/
+.dark-theme-variables{
+    --color-background:#181a1e;
+    --color-white:#202528;
+    --color-dark:#edeffd;
+    --color-light:rgba(0,0,0,0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
 *{
     margin:0;
     padding: 0;
@@ -122,7 +130,7 @@ aside{
     
 }
 aside .top{
-    background: white;
+    
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -541,6 +549,11 @@ main .recent-orders a{
     color: var(--color-primary);
     justify-content: center;
 }
+
+.right .sales-anaytics .add-product:hover{
+background: var(--color-primary);
+color: white;
+}
 .right .sales-anaytics .add-product div{
     display: flex;
     align-items: center;
@@ -551,3 +564,158 @@ main .recent-orders a{
 }
 
 /* ===============media QUERIES=============== */
+@media screen and (max-width: 1200px){
+    .container{
+        width: 94%;
+        grid-template-columns: 7rem auto 23rem;
+    }
+ 
+ aside .logo{
+     display: none;
+ }
+ aside .sidebar h2{
+     display: none;
+ }
+ aside .sidebar h3{
+     display:none;
+ }
+ aside .sidebar a{
+     width: 5.6rem;
+ }
+aside .sidebar a:last-child{
+    position: relative;
+    margin-top: 1.8rem;
+}
+main .insights{
+    grid-template-columns: 1fr;
+    gap:0;
+}
+main .recent-orders{
+    width: 94%;
+    position: absolute;
+    left:50%;
+    transform: translate(-50%);
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+    margin: 2rem 0 0 8.8rem;
+}
+
+main .recent-orders table{
+    width: 83vw;
+}
+main table thead tr th:last-child,
+main table thead tr th:first-child{
+    display: none;
+}
+main table tbody tr td:last-child,
+main table tbody tr td:first-child{
+    display: none;
+}
+}
+
+/* ==============media queries mobile and smal tablets===*/
+@media screen and (max-width: 768px){
+   .container{
+       width: 100%;
+       grid-template-columns: 1fr;
+   }
+   aside{
+       position: fixed;
+       left: -100%;
+       background: var(--color-white);
+       width:18rem;
+       z-index:3;
+       box-shadow: 1rem 3rem 4rem var(--color-light);
+       height:100vh;
+       padding:var(--card-padding);
+       display: none;
+       animation: showMenu 600ms ease forwards;
+       -webkit-animation: showMenu 500ms ease forwards;
+}
+@keyframes showMenu {
+    to{
+        left:0; /*animation side bar*/
+    }
+    
+}
+   aside  .top .logo{
+       margin-left :1rem;
+       display: flex;
+   }
+   aside .logo h2{
+       display: inline;
+   }
+   aside .sidebar h3{
+       display: inline;
+   }
+   aside .sidebar a{
+       width: 100%;
+       height: 3.4rem;
+   }
+   aside .sidebar a:last-child{
+       position: absolute;
+       bottom: 5rem;
+   }
+   aside .close{
+       display: inline-block;
+       cursor: pointer;
+   }
+   main{
+       margin-top: 8rem;
+       padding:0 1rem ;
+   }
+   main .recent-orders{
+       position: relative;
+       margin:  3rem 0 0 0;
+       width: 100%;
+   }
+   main .recent-orders{
+       width: 100%;
+       margin:0 ;
+   }
+.right{
+    width: 94%;
+    margin: 0 auto 4rem;
+
+}
+.right .top{
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-items: center;
+    padding: 0 0.8rem;
+    height: 4.6rem;
+    background: var(--color-white);
+    width:100%;
+    margin:0;
+    z-index:2;
+    box-shadow: 0 1rem 1rem var(--color-light);
+
+}
+.right .top .theme-toggler{
+    width: 4.4rem;
+    position: absolute;
+    left:66%;
+
+}
+.right .profile .info{
+    display: none;
+}
+.right .top button{
+    display: inline-block;
+    background: transparent;
+    cursor: pointer;
+    color: var(--color-dark);
+    position: absolute;
+    left: 1rem;
+}
+
+}
+
+
+
+
+
+   
